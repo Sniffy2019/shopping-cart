@@ -1,6 +1,6 @@
-#app.py
+# app.py
 from flask import Flask, session, render_template, request, redirect, url_for
-import psycopg2 #pip install psycopg2 
+import psycopg2 # pip install psycopg2 
 import psycopg2.extras
  
 app = Flask(__name__)
@@ -113,6 +113,8 @@ def array_merge( first_array , second_array ):
         return first_array.union( second_array )
     return False
  
+ app.app_context().push()
+ 
 if __name__ == "__main__":
     app.run(debug=True)
-</string:code>
+
